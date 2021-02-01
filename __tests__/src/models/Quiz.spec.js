@@ -29,56 +29,56 @@ describe('Quizクラスのテスト',() => {
             });
         });
 
-    //     describe('getter', () => {
-    //         it('questionとcorrectAnswerのgetterが使える',() => {
-    //             const quizData = createMockQuiz();
-    //             const quiz = new Quiz(quizData);
+        describe('getter', () => {
+            it('questionとcorrectAnswerのgetterが使える',() => {
+                const quizData = createMockQuiz();
+                const quiz = new Quiz(quizData);
 
-    //             expect( quiz.question ).toStrictEqual( quizData.question );
-    //             expect( quiz.correctAnswer ).toStrictEqual( quizData.correctAnswer );
-    //             expect( quiz.incorrectAnswers ).toStrictEqual( undefined );
-    //         })
-    //     });
+                expect( quiz.question ).toStrictEqual( quizData.question );
+                expect( quiz.correctAnswer ).toStrictEqual( quizData.correctAnswer );
+                expect( quiz.incorrectAnswers ).toStrictEqual( undefined );
+            })
+        });
 
-    //     describe('shuffle', () => {
-    //         it('シャッフルされる', () => {
-    //             const quizData = createMockQuiz();
-    //             const quiz = new Quiz(quizData);
+        describe('shuffle', () => {
+            it('シャッフルされる', () => {
+                const quizData = createMockQuiz();
+                const quiz = new Quiz(quizData);
 
-    //             const shuffledAnswers1 = quiz.shuffleAnswers();
-    //             const shuffledAnswers2 = quiz.shuffleAnswers();
-    //             expect( shuffledAnswers1 ).not.toStrictEqual( shuffledAnswers2 );
-    //         });
-    //     });
+                const shuffledAnswers1 = quiz.shuffleAnswers();
+                const shuffledAnswers2 = quiz.shuffleAnswers();
+                expect( shuffledAnswers1 ).not.toStrictEqual( shuffledAnswers2 );
+            });
+        });
 
-    //     describe('judgeCorrectAnswer', () => {
-    //         it('引数の値が正解ならtrue、不正解ならfalseが返る', () => {
-    //             const quizData = createMockQuiz();
-    //             const quiz = new Quiz(quizData);
+        describe('judgeCorrectAnswer', () => {
+            it('引数の値が正解ならtrue、不正解ならfalseが返る', () => {
+                const quizData = createMockQuiz();
+                const quiz = new Quiz(quizData);
 
-    //             expect( quiz.judgeCorrectAnswer(quizData.correctAnswer) )
-    //                 .toStrictEqual(true);
+                expect( quiz.judgeCorrectAnswer(quizData.correctAnswer) )
+                    .toStrictEqual(true);
                 
-    //             quizData.incorrectAnswers.forEach((incorrectAnswer) => {
-    //                 expect( quiz.judgeCorrectAnswer(quizData.incorrectAnswer) )
-    //                     .toStrictEqual(false);
-    //             });
-    //         });
-    //     });
-    // });
+                quizData.incorrectAnswers.forEach((incorrectAnswer) => {
+                    expect( quiz.judgeCorrectAnswer(quizData.incorrectAnswer) )
+                        .toStrictEqual(false);
+                });
+            });
+        });
+    });
 
-    // describe('クラスメソッド', () => {
-    //     describe('fetchAndCreateQuizzes', () => {
-    //         it('10件のQuizインスタンスが返る', async () => {
-    //             const quizzes = await Quiz.fetchAndCreateQuizzes();
+    describe('クラスメソッド', () => {
+        describe('fetchAndCreateQuizzes', () => {
+            it('10件のQuizインスタンスが返る', async () => {
+                const quizzes = await Quiz.fetchAndCreateQuizzes();
 
-    //             expect( Array.isArray(quizzes) ).toStrictEqual(true);
-    //             expect( quizzes.length ).toStrictEqual(10);
-    //             quizzes.forEach((quiz) => {
-    //                 expect( quiz instanceof Quiz ).toStrictEqual(true);
-    //             });
-    //         });
-    //     });
+                expect( Array.isArray(quizzes) ).toStrictEqual(true);
+                expect( quizzes.length ).toStrictEqual(10);
+                quizzes.forEach((quiz) => {
+                    expect( quiz instanceof Quiz ).toStrictEqual(true);
+                });
+            });
+        });
     });
 
 });
