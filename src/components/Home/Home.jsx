@@ -1,11 +1,11 @@
 import React from 'react';
-// import Button from "../Button/Button";
+import Button from "../Button/Button";
 
 const Home = ({ history }) => {
     return (
         <div>
             <h1>Welcome to the Quiz App!</h1>
-            {/* <br/>
+            <br/>
             <br/>
             <Button 
                 onClickHandler={() => {
@@ -13,7 +13,7 @@ const Home = ({ history }) => {
                 }}
             >
                 Let's start!!
-            </Button> */}
+            </Button>
         </div>
     );
 };
